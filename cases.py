@@ -1,10 +1,8 @@
 import os
-
 import pandas
-
 import requests
 from bs4 import BeautifulSoup
-from common_utils import BASE_URLS, parse_cases_table, get_pages_number, parse_cases_details_table
+from common_utils import BASE_URLS, parse_cases_table, parse_cases_details_table
 
 
 def scrap_cases():
@@ -25,9 +23,8 @@ def scrap_cases():
 
         data.head(10).to_csv(f'Cases/cases.csv', index=False)
 
-        pages = get_pages_number(soup)
-
-        for i in range(2, pages+1):
+        i = 2
+        while True:
 
             response = requests.get(BASE_URLS['Cases'].format(i))
             soup = BeautifulSoup(response.text, 'lxml')
@@ -35,11 +32,17 @@ def scrap_cases():
             res = parse_cases_table(soup)
             res.pop()
 
+            if len(res) <= 0:
+                print('No more cases to show.')
+                return
+
             data = pandas.DataFrame(res,
                                     columns=['Case Number', 'Defendant\'s Name', 'Offence Date', 'Local Authority',
                                              'Main Activity'])
             data['Time-st'] = pandas.to_datetime('today').utcnow()
             data.head(10).to_csv(f'Cases/cases.csv', index=False, mode='a', header=False)
+
+            i += 1
 
 
 def scrap_cases_details():

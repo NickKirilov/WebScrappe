@@ -4,8 +4,7 @@ import pandas
 import requests
 from bs4 import BeautifulSoup
 
-from common_utils import BASE_URLS, parse_cases_table, get_pages_number, parse_cases_details_table, \
-    parse_breaches_details_table
+from common_utils import BASE_URLS, parse_cases_table, parse_breaches_details_table
 
 
 def scrap_breaches():
@@ -26,21 +25,26 @@ def scrap_breaches():
 
         data.head(10).to_csv('Breaches/breaches.csv', index=False)
 
-        pages = get_pages_number(soup)
+        i = 2
 
-        for i in range(2, pages+1):
+        while True:
 
             response = requests.get(BASE_URLS['Breaches'].format(i))
             soup = BeautifulSoup(response.text, 'lxml')
 
             res = parse_cases_table(soup)
             res.pop()
+            if len(res) <= 0:
+                print('Nothing more to show.')
+                return
 
             data = pandas.DataFrame(res,
                                     columns=['Case/Breach', 'Defendant\'s Name', 'Hearing Date', 'Result',
                                              'Fine £', 'Act or Regulation'])
             data['Time-st'] = pandas.to_datetime('today').utcnow()
             data.head(10).to_csv('Breaches/breaches.csv', index=False, mode='a', header=False)
+
+            i += 1
 
 
 def scrap_breaches_details():
@@ -59,6 +63,7 @@ def scrap_breaches_details():
         res = parse_breaches_details_table(soup)
         res.insert(0, breach_number)
         res.insert(0, case_number)
+        res.append(endpoint)
 
         try:
             new_df = pandas.DataFrame(
@@ -67,7 +72,7 @@ def scrap_breaches_details():
                     'Case Number', 'Breach Number', 'Defendant', 'Court Name', 'Court Level', 'Act', 'Regulation',
                     'Date of Hearing', 'Result', 'Fine', 'Address', 'Region',
                     'Local Authority', 'Industry', 'Main Activity', 'Type of Location', 'HSE Group',
-                    'HSE Directorate', 'HSE Area', 'HSE Division'
+                    'HSE Directorate', 'HSE Area', 'HSE Division', 'Combined Id'
                 ]
             )
             new_df['Time-st'] = pandas.to_datetime('today').utcnow()
