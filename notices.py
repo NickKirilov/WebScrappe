@@ -51,23 +51,23 @@ def scrap_notices_details():
         response = requests.get('https://resources.hse.gov.uk/notices/notices/notice_details.asp?SF=CN&SV=' + notice_number)
 
         soup = BeautifulSoup(response.text, 'lxml')
-        res = parse_notices_details_table(soup)
+        res, col = parse_notices_details_table(soup)
+
         res.insert(0, df.iat[i, 0].split(',')[3])
         res.insert(0, df.iat[i, 0].split(',')[1])
         res.insert(0, notice_number)
-        # should get the columns from the website not to be hardcoded, at least not all of them
+
         try:
             new_df = pandas.DataFrame(
                 [res],
                 columns=[
-                    'Notice Number', 'Recipient Name', 'Served Date', 'Notice Type', 'Description', 'Compliance Date',
-                    'Revised Compliance Date', 'Result', 'Address', 'Region', 'Local Authority', 'Industry', 'Main Activity',
-                    'Type of Location', 'HSE Group', 'HSE Directorate', 'HSE Area', 'HSE Division'
-                ]
+                    'Notice Number', 'Recipient Name', 'Served Date',
+                ] + col
             )
             new_df['Time-st'] = pandas.to_datetime('today').utcnow()
 
             new_df.head(10).to_csv(f'Notices/{notice_number}.csv', index=False)
         except:
-            print(notice_number)
+            print('Notice number: ' + notice_number)
+            print('Could not create a dataframe')
             return

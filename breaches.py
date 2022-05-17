@@ -61,6 +61,7 @@ def scrap_breaches_details():
 
         soup = BeautifulSoup(response.text, 'lxml')
         res = parse_breaches_details_table(soup)
+
         res.insert(0, breach_number)
         res.insert(0, case_number)
         res.append(endpoint)

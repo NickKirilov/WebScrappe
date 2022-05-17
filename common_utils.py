@@ -23,24 +23,50 @@ def parse_cases_table(soup):
 def parse_notices_details_table(soup):
     table = soup.find_all('td')
     res = []
+    col = []
+    if len(table) < 27:
+        for i in range(0, len(table)):
 
-    for i in range(0, len(table)):
+            try:
+                if 'Breaches involved in this Notice' in table[i].text or 'HSE Details' in table[i].text:
+                    continue
 
-        try:
-            if 'Breaches involved in this Notice' in table[i].text or 'HSE Details' in table[i].text:
-                continue
+                if i < 4 or i > 17:
+                    if i % 2 != 0:
+                        res.append(table[i].text)
+                    else:
+                        col.append(table[i].text)
+                else:
+                    if i % 2 == 0:
+                        res.append(table[i].text)
+                    else:
+                        col.append(table[i].text)
 
-            if i < 10 or i > 23:
-                if i % 2 != 0:
-                    res.append(table[i].text)
-            else:
-                if i % 2 == 0:
-                    res.append(table[i].text)
+            except IndexError:
+                return res, col
 
-        except IndexError:
-            return res
+    else:
+        for i in range(0, len(table)):
 
-    return res
+            try:
+                if 'Breaches involved in this Notice' in table[i].text or 'HSE Details' in table[i].text:
+                    continue
+
+                if i < 10 or i > 23:
+                    if i % 2 != 0:
+                        res.append(table[i].text)
+                    else:
+                        col.append(table[i].text)
+                else:
+                    if i % 2 == 0:
+                        res.append(table[i].text)
+                    else:
+                        col.append(table[i].text)
+
+            except IndexError:
+                return res, col
+
+    return res, col
 
 
 def parse_cases_details_table(soup):
@@ -50,12 +76,13 @@ def parse_cases_details_table(soup):
     for i in range(0, len(table)):
 
         try:
-            if 'Breach involved in this Notice' in table[i].text or 'HSE Details' in table[i].text or 'Location of Offence' in table[i].text:
+            if 'Breach involved in this Case' in table[i].text or 'HSE Details' in table[i].text or 'Location of Offence' in table[i].text:
                 continue
 
             if i > 24:
                 if i % 2 == 0:
                     res.append(table[i].text)
+
             else:
                 if i % 2 != 0:
                     res.append(table[i].text)
@@ -88,3 +115,4 @@ def parse_breaches_details_table(soup):
             return res
 
     return res
+

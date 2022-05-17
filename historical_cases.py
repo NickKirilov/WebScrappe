@@ -55,7 +55,7 @@ def scrap_historical_cases_details():
         case_number = df.iat[i, 0].split(',')[0]
 
         response = requests.get(
-            'https://resources.hse.gov.uk/convictions/case/case_details.asp?SF=CN&SV=' + case_number)
+            'https://resources.hse.gov.uk/convictions-history/case/case_details.asp?SF=CN&SV=' + case_number)
 
         soup = BeautifulSoup(response.text, 'lxml')
         res = parse_cases_details_table(soup)
