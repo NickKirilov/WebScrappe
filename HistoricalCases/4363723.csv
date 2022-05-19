@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4363723,Stirling Council,,07/02/2012,"£10,500.00",£0.00,14-20 Pitt TerraceStirlingFK8 2ETScotland,Scotland,Stirling UA,Total service industries,84110 - GENERAL PUBLIC ADMINISTRATION,,SANEOP1GP2,Field Operations Directorate,,Scotland,2022-05-17 12:56:08.406326+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4363723,Stirling Council,,07/02/2012,"£10,500.00",£0.00,14-20 Pitt TerraceStirlingFK8 2ETScotland,Scotland,Stirling UA,Total service industries,84110 - GENERAL PUBLIC ADMINISTRATION,,SANEOP1GP2,Field Operations Directorate,,Scotland,1652957425.020448

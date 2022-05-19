@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4378842,Medpharma Limited,,23/07/2013,"£180,000.00","£40,000.00",104 Edgware RoadLondonW2 2EAEngland,London,City of Westminster,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP19,Field Operations Directorate,,London,2022-05-17 12:53:04.985088+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4378842,Medpharma Limited,,23/07/2013,"£180,000.00","£40,000.00",104 Edgware RoadLondonW2 2EAEngland,London,City of Westminster,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP19,Field Operations Directorate,,London,1652957242.2553015

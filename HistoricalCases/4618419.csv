@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4618419,Artizan Heating Limited,,06/04/2017,"£5,000.00","£5,722.24",14 Manor RoadWhitchurch on ThamesRG8 7EUEngland,East & South East,Bracknell Forest UA,Construction,43220 - INSTALL PLUMB/HEAT/AIR-CON,,CDOP3GP15,Construction Division,,South East,2022-05-17 12:47:22.890672+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4618419,Artizan Heating Limited,,06/04/2017,"£5,000.00","£5,722.24",14 Manor RoadWhitchurch on ThamesRG8 7EUEngland,East & South East,Bracknell Forest UA,Construction,43220 - INSTALL PLUMB/HEAT/AIR-CON,,CDOP3GP15,Construction Division,,South East,1652956870.901678

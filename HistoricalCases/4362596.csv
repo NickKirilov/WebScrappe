@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4362596,Persimmon Homes Limited,,19/04/2012,"£8,000.00","£10,546.25",Ploughman's LaneLincolnLincolnshireLN2 4FYEngland,Midlands,Lincoln,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP3GRP10,Field Operations Directorate,,East Midlands,2022-05-17 12:54:16.362764+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4362596,Persimmon Homes Limited,,19/04/2012,"£8,000.00","£10,546.25",Ploughman's LaneLincolnLincolnshireLN2 4FYEngland,Midlands,Lincoln,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP3GRP10,Field Operations Directorate,,East Midlands,1652957314.2582674

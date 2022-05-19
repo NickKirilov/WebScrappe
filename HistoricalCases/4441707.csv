@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4441707,St Christopher's Hospice,,03/01/2012,£0.00,"£25,000.00",51-59 Lawrie Park RoadSydenhamLondonSE26 6DZEngland,London,Bromley,Total service industries,86101 - HOSPITAL ACTIVITIES,,CDOP4GRP20,Field Operations Directorate,,London,2022-05-17 12:56:02.120196+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4441707,St Christopher's Hospice,,03/01/2012,£0.00,"£25,000.00",51-59 Lawrie Park RoadSydenhamLondonSE26 6DZEngland,London,Bromley,Total service industries,86101 - HOSPITAL ACTIVITIES,,CDOP4GRP20,Field Operations Directorate,,London,1652957419.3187008

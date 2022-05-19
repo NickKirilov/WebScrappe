@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4397054,PV Solar UK Ltd,,30/04/2013,"£153,000.00","£29,480.81",Argrove HouseHawkingeKentEngland,East & South East,Folkstone and Hythe,Construction,43910 - ROOFING ACTIVITIES,,CDOP4GRP17,Field Operations Directorate,,South East,2022-05-17 12:54:37.734688+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4397054,PV Solar UK Ltd,,30/04/2013,"£153,000.00","£29,480.81",Argrove HouseHawkingeKentEngland,East & South East,Folkstone and Hythe,Construction,43910 - ROOFING ACTIVITIES,,CDOP4GRP17,Field Operations Directorate,,South East,1652957335.1821344

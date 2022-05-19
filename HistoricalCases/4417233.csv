@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4417233,Bellmoor Construction Limited,,01/07/2013,"£45,000.00","£6,612.57",Millbank HouseMillbankLondonSW1P 3JZEngland,London,City of Westminster,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP19,Field Operations Directorate,,London,2022-05-17 12:47:52.202170+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4417233,Bellmoor Construction Limited,,01/07/2013,"£45,000.00","£6,612.57",Millbank HouseMillbankLondonSW1P 3JZEngland,London,City of Westminster,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP19,Field Operations Directorate,,London,1652956899.0278213

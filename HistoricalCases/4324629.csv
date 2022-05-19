@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4324629,Russell Fabrications (UK) Ltd,,05/12/2011,"£11,917.56","£13,734.44",Turner Street/Russell FabricatEngland,North West,Tameside,Manufacturing,25990 - MF FABRICATED METAL PROD NEC,Fixed,CENTOP2GP3,Field Operations Directorate,,North West,2022-05-17 12:55:16.449116+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4324629,Russell Fabrications (UK) Ltd,,05/12/2011,"£11,917.56","£13,734.44",Turner Street/Russell FabricatEngland,North West,Tameside,Manufacturing,25990 - MF FABRICATED METAL PROD NEC,Fixed,CENTOP2GP3,Field Operations Directorate,,North West,1652957373.8645964

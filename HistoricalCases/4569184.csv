@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4569184,Nichol McKay Limited,,04/05/2017,"£12,000.00",£0.00,Profile ShedBuilding 190PrestwickKA9 2SBScotland,Scotland,South Ayrshire UA,Manufacturing,25990 - MF FABRICATED METAL PROD NEC,,FODOP1GP4,Field Operations Division,,Scotland,2022-05-17 12:53:44.358336+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4569184,Nichol McKay Limited,,04/05/2017,"£12,000.00",£0.00,Profile ShedBuilding 190PrestwickKA9 2SBScotland,Scotland,South Ayrshire UA,Manufacturing,25990 - MF FABRICATED METAL PROD NEC,,FODOP1GP4,Field Operations Division,,Scotland,1652957282.2762504

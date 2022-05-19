@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4284333,Dairy Crest Limited,,05/03/2008,"£12,000.00","£22,214.00",Dairy CrestStation YardTotnesDevonTQ9 5JPEngland,East & South East,Elmbridge,Manufacturing,10511 - LIQUID MILK/CREAM PRODUCTION,,CDCONSSECT,Field Operations Directorate,,South East,2022-05-17 12:49:28.282046+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4284333,Dairy Crest Limited,,05/03/2008,"£12,000.00","£22,214.00",Dairy CrestStation YardTotnesDevonTQ9 5JPEngland,East & South East,Elmbridge,Manufacturing,10511 - LIQUID MILK/CREAM PRODUCTION,,CDCONSSECT,Field Operations Directorate,,South East,1652957022.8363013

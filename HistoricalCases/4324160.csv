@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4324160,Sarval Limited,,22/02/2012,"£20,000.00","£10,143.10",Stoke LaneNottinghamNottinghamshireNG14 5HJEngland,Midlands,Gedling,Manufacturing,10110 - PROCESSING/PRESERVING OF MEAT,,CENTOP2GP4,Field Operations Directorate,,East Midlands,2022-05-17 12:55:26.067989+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4324160,Sarval Limited,,22/02/2012,"£20,000.00","£10,143.10",Stoke LaneNottinghamNottinghamshireNG14 5HJEngland,Midlands,Gedling,Manufacturing,10110 - PROCESSING/PRESERVING OF MEAT,,CENTOP2GP4,Field Operations Directorate,,East Midlands,1652957382.9410834

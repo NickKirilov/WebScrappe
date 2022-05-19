@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4306558,Fastrac Profiles Limited,,27/09/2011,"£5,000.00","£3,761.89",Green LaneBridgtownStaffordshireWS11 0JJEngland,Midlands,Cannock Chase,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP2GRP9,Field Operations Directorate,,West Midlands,2022-05-17 12:50:21.124359+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4306558,Fastrac Profiles Limited,,27/09/2011,"£5,000.00","£3,761.89",Green LaneBridgtownStaffordshireWS11 0JJEngland,Midlands,Cannock Chase,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP2GRP9,Field Operations Directorate,,West Midlands,1652957074.734789

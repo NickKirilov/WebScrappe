@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4441299,Altan Plant Hire Ltd,,02/06/2015,"£20,000.00",£0.00,Lochwinnoch RoadKilmacolmScotland,Scotland,Inverclyde UA,Total service industries,99000 - EXTRATERRITORIAL ORGS/BODIES,,CDOP1GP3,Construction Division,,Scotland,2022-05-17 12:47:08.339102+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4441299,Altan Plant Hire Ltd,,02/06/2015,"£20,000.00",£0.00,Lochwinnoch RoadKilmacolmScotland,Scotland,Inverclyde UA,Total service industries,99000 - EXTRATERRITORIAL ORGS/BODIES,,CDOP1GP3,Construction Division,,Scotland,1652956856.9790146

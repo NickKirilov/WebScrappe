@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4559003,GMG Car Wash Ltd,,22/01/2018,£650.00,£500.00,2-4 Exeter Street/GMG Car WashEngland,Midlands,Birmingham,Total service industries,81299 - CLEANING SERVICES NEC,Fixed,FODOP7GP27,Field Operations Division,,West Midlands,2022-05-17 12:50:54.134994+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4559003,GMG Car Wash Ltd,,22/01/2018,£650.00,£500.00,2-4 Exeter Street/GMG Car WashEngland,Midlands,Birmingham,Total service industries,81299 - CLEANING SERVICES NEC,Fixed,FODOP7GP27,Field Operations Division,,West Midlands,1652957106.976341

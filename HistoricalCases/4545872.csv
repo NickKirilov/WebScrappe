@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4545872,P D R Construction Limited,,21/07/2016,"£225,000.00","£8,000.00",KFC  NewbuildCoulby NewhamTS8 0TWEngland,Yorks & North East,Redcar & Cleveland,Construction,41201 - CONSTRUCTION COMMERCIAL BLDGS,,CDOP1GP6,Construction Division,,North East,2022-05-17 12:54:03.480175+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4545872,P D R Construction Limited,,21/07/2016,"£225,000.00","£8,000.00",KFC  NewbuildCoulby NewhamTS8 0TWEngland,Yorks & North East,Redcar & Cleveland,Construction,41201 - CONSTRUCTION COMMERCIAL BLDGS,,CDOP1GP6,Construction Division,,North East,1652957302.495941

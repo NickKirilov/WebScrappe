@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4330895,Beck Interiors Limited,,05/03/2012,"£20,120.00","£13,365.00","Cranbourn, Leicester Sq, LondoLondonEngland",London,City of Westminster,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP19,Field Operations Directorate,,London,2022-05-17 12:47:50.405727+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4330895,Beck Interiors Limited,,05/03/2012,"£20,120.00","£13,365.00","Cranbourn, Leicester Sq, LondoLondonEngland",London,City of Westminster,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP19,Field Operations Directorate,,London,1652956897.255104

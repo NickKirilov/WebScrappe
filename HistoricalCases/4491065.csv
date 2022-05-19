@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4491065,DSG LTD,,28/07/2015,"£1,000.00",£804.40,100 South Eastern RoadRamsgateKentCT11 9QDEngland,East & South East,Thanet,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP17,Field Operations Directorate,,South East,2022-05-17 12:49:45.682858+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4491065,DSG LTD,,28/07/2015,"£1,000.00",£804.40,100 South Eastern RoadRamsgateKentCT11 9QDEngland,East & South East,Thanet,Construction,41200 - CONSTRUCTION OF BUILDINGS,,CDOP4GRP17,Field Operations Directorate,,South East,1652957040.1155624

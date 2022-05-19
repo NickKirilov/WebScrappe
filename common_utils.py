@@ -7,7 +7,7 @@ BASE_URLS = {
 }
 
 
-def parse_cases_table(soup):
+def parse_cases_breaches_table(soup):
     table = soup.find_all('tr')
     res = []
 

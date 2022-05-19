@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4301578,B P McKeefry Ltd,,14/03/2011,"£6,000.00","£3,000.00",Southport RoadLiverpoolMerseysideL31 4HDEngland,North West,Sefton,Total service industries,49410 - FREIGHT TRANSPORT BY ROAD,,SANEOP4G17,Field Operations Directorate,,North West,2022-05-17 12:47:34.756247+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4301578,B P McKeefry Ltd,,14/03/2011,"£6,000.00","£3,000.00",Southport RoadLiverpoolMerseysideL31 4HDEngland,North West,Sefton,Total service industries,49410 - FREIGHT TRANSPORT BY ROAD,,SANEOP4G17,Field Operations Directorate,,North West,1652956882.4932194

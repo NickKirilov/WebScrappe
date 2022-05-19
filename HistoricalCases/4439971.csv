@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4439971,R M Contractors Limited,,18/05/2015,"£180,000.00","£22,000.00",Western RoadHagleyBromsgroveWorcestershireDY9 0LBEngland,Midlands,Bromsgrove,Total service industries,45200 - MVR,,CDOP3GRP12,Field Operations Directorate,,West Midlands,2022-05-17 12:54:45.894691+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4439971,R M Contractors Limited,,18/05/2015,"£180,000.00","£22,000.00",Western RoadHagleyBromsgroveWorcestershireDY9 0LBEngland,Midlands,Bromsgrove,Total service industries,45200 - MVR,,CDOP3GRP12,Field Operations Directorate,,West Midlands,1652957343.1145067

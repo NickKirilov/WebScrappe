@@ -1,50 +1,58 @@
 import os
+import time
+import urllib.error
 
 import pandas
 import requests
 from bs4 import BeautifulSoup
 
-from common_utils import BASE_URLS, parse_cases_table, parse_breaches_details_table
+from common_utils import BASE_URLS, parse_breaches_details_table, parse_cases_breaches_table
 
 
 def scrape_historical_breaches():
         response = requests.get(BASE_URLS['HistoricalBreaches'].format("1"))
 
         soup = BeautifulSoup(response.text, 'lxml')
-        res = parse_cases_table(soup)
+        res = parse_cases_breaches_table(soup)
+        res.pop()
 
         data = pandas.DataFrame(res, columns=['case/breach', 'defendant\'s_name', 'hearing_date', 'result',
                                           'fine £', 'act_or_regulation'])
 
-        data['cytora_ingest_ts'] = pandas.to_datetime('today').utcnow()
+        data['cytora_ingest_ts'] = time.time()
 
         try:
             os.makedirs('HistoricalBreaches')
         except FileExistsError:
             pass
 
-        data.head(10).to_csv('HistoricalBreaches/historical_breaches.csv', index=False)
+        data.to_csv('HistoricalBreaches/historical_breaches.csv', index=False)
 
         i = 2
 
         while True:
+            try:
+                response = requests.get(BASE_URLS['HistoricalBreaches'].format(i))
+                soup = BeautifulSoup(response.text, 'lxml')
 
-            response = requests.get(BASE_URLS['HistoricalBreaches'].format(i))
-            soup = BeautifulSoup(response.text, 'lxml')
+                res = parse_cases_breaches_table(soup)
+                res.pop()
+                if len(res) <= 0:
+                    print('No more historical breaches to show.')
+                    return
 
-            res = parse_cases_table(soup)
-            res.pop()
-            if len(res) <= 0:
-                print('No more historical breaches to show.')
+                data = pandas.DataFrame(res,
+                                        columns=['case/breach', 'defendant\'s_name', 'hearing_date', 'result',
+                                                 'fine £', 'act_or_regulation'])
+                data['cytora_ingest_ts'] = time.time()
+                data.to_csv('HistoricalBreaches/historical_breaches.csv', index=False, mode='a', header=False)
+
+                i += 1
+            except urllib.error.HTTPError:
+                print('Bad request')
+                print(f'At index: {i}')
+                print(f'At URL: {BASE_URLS["HistoricalBreaches"].format(i)}')
                 return
-
-            data = pandas.DataFrame(res,
-                                    columns=['case/breach', 'defendant\'s_name', 'hearing_date', 'result',
-                                             'fine £', 'act_or_regulation'])
-            data['cytora_ingest_ts'] = pandas.to_datetime('today').utcnow()
-            data.head(10).to_csv('HistoricalBreaches/historical_breaches.csv', index=False, mode='a', header=False)
-
-            i += 1
 
 
 def scrape_historical_breaches_details(breaches: list = None):
@@ -68,21 +76,24 @@ def scrape_historical_breaches_details(breaches: list = None):
                 success.add(a.get('case_id'))
                 success_arr.append(a)
     else:
-        df = pandas.read_csv(f'HistoricalBreaches/historical_breaches.csv', sep='\t')
 
-        for i in range(0, len(df)):
-            case_number, breach_number = df.iat[i, 0].split(',')[0].split('/')
+        with open('HistoricalBreaches/historical_breaches.csv', 'r') as file:
+            for row in file:
+                record = row.split(',')
+                if 'case/breach' in record:
+                    continue
 
-            endpoint = case_number + breach_number
-            case_number = case_number[:-1]
-            a = fetch_historical_breaches_details(case_number, breach_number, endpoint)
+                case_number, breach_number = record[0].split('/')
+                endpoint = case_number + breach_number
+                case_number = case_number[:-1]
+                a = fetch_historical_breaches_details(case_number, breach_number, endpoint)
 
-            if not a.get('state'):
-                errors.add(a.get('case_id'))
-                errors_arr.append(a)
-            else:
-                success.add(a.get('case_id'))
-                success_arr.append(a)
+                if not a.get('state'):
+                    errors.add(a.get('case_id'))
+                    errors_arr.append(a)
+                else:
+                    success.add(a.get('case_id'))
+                    success_arr.append(a)
 
     print('Errors: ' + str(errors))
     print('Successful: ' + str(success))
@@ -110,10 +121,10 @@ def fetch_historical_breaches_details(case_id: str, breach_number: str, endpoint
             ]
         )
 
-        new_df['cytora_ingest_ts'] = pandas.to_datetime('today').utcnow()
-        # TODO: must handle the following row
+        new_df['cytora_ingest_ts'] = time.time()
+
         file_path = f'HistoricalBreaches/{endpoint}.csv'
-        new_df.head(10).to_csv(file_path, index=False)
+        new_df.to_csv(file_path, index=False)
 
         return {
             'state': True,

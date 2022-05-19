@@ -1,35 +1,39 @@
 import os
+import time
+import urllib.error
+
 import pandas
 import requests
 from bs4 import BeautifulSoup
-from common_utils import BASE_URLS, parse_cases_table, parse_cases_details_table
+from common_utils import BASE_URLS, parse_cases_breaches_table, parse_cases_details_table
 
 
 def scrape_cases():
-        response = requests.get(BASE_URLS['Cases'].format("1"))
+    response = requests.get(BASE_URLS['Cases'].format("1"))
+    soup = BeautifulSoup(response.text, 'lxml')
 
-        soup = BeautifulSoup(response.text, 'lxml')
-        res = parse_cases_table(soup)
+    res = parse_cases_breaches_table(soup)
+    res.pop()
 
-        data = pandas.DataFrame(res, columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
-                                          'main_activity'])
+    data = pandas.DataFrame(res,
+                            columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
+                                     'main_activity'])
+    data['cytora_ingest_ts'] = time.time()
 
-        data['cytora_ingest_ts'] = pandas.to_datetime('today').utcnow()
+    try:
+        os.makedirs('Cases')
+    except FileExistsError:
+        pass
 
+    data.to_csv(f'Cases/cases.csv', index=False)
+
+    i = 2
+    while True:
         try:
-            os.makedirs('Cases')
-        except FileExistsError:
-            pass
-
-        data.head(10).to_csv(f'Cases/cases.csv', index=False)
-
-        i = 2
-        while True:
-
             response = requests.get(BASE_URLS['Cases'].format(i))
             soup = BeautifulSoup(response.text, 'lxml')
 
-            res = parse_cases_table(soup)
+            res = parse_cases_breaches_table(soup)
             res.pop()
 
             if len(res) <= 0:
@@ -39,10 +43,15 @@ def scrape_cases():
             data = pandas.DataFrame(res,
                                     columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                              'main_activity'])
-            data['cytora_ingest_ts'] = pandas.to_datetime('today').utcnow()
-            data.head(10).to_csv(f'Cases/cases.csv', index=False, mode='a', header=False)
+            data['cytora_ingest_ts'] = time.time()
+            data.to_csv(f'Cases/cases.csv', index=False, mode='a', header=False)
 
             i += 1
+        except urllib.error.HTTPError:
+            print('Bad request')
+            print(f'At index: {i}')
+            print(f'At URL: {BASE_URLS["Cases"].format(i)}')
+            return
 
 
 def scrape_cases_details(cases: list = None):
@@ -64,19 +73,23 @@ def scrape_cases_details(cases: list = None):
                 success.add(a.get('case_id'))
                 success_arr.append(a)
     else:
-        df = pandas.read_csv(f'Cases/cases.csv', sep='\t')
+        with open('Cases/cases.csv', 'r') as file:
 
-        for i in range(0, len(df)):
-            case_number = df.iat[i, 0].split(',')[0]
+            for row in file:
+                record = row.split(',')
 
-            a = fetch_cases_details(case_number)
+                if 'case_number' in record:
+                    continue
+                case_number = record[0]
 
-            if not a.get('state'):
-                errors.add(a.get('case_id'))
-                errors_arr.append(a)
-            else:
-                success.add(a.get('case_id'))
-                success_arr.append(a)
+                a = fetch_cases_details(case_number)
+
+                if not a.get('state'):
+                    errors.add(a.get('case_id'))
+                    errors_arr.append(a)
+                else:
+                    success.add(a.get('case_id'))
+                    success_arr.append(a)
 
     print('Errors: ' + str(errors))
     print('Successful: ' + str(success))
@@ -101,10 +114,10 @@ def fetch_cases_details(case_id: str) -> dict:
             ]
         )
 
-        new_df['cytora_ingest_ts'] = pandas.to_datetime('today').utcnow()
-        # TODO: must handle the following row
+        new_df['cytora_ingest_ts'] = time.time()
+
         file_path = f'Cases/{case_id}.csv'
-        new_df.head(10).to_csv(file_path, index=False)
+        new_df.to_csv(file_path, index=False)
 
         return {
             'state': True,
@@ -117,5 +130,3 @@ def fetch_cases_details(case_id: str) -> dict:
             'error': str(e),
             'case_id': case_id,
         }
-
-

@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4297150,Granite Express Limited,,16/02/2012,"£2,000.00","£5,000.00",England,London,Sutton,Construction,43390 - OTHER BUILDING COMPLETION,,SOUTHOP1G4,Field Operations Directorate,,London,2022-05-17 12:50:55.772594+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4297150,Granite Express Limited,,16/02/2012,"£2,000.00","£5,000.00",England,London,Sutton,Construction,43390 - OTHER BUILDING COMPLETION,,SOUTHOP1G4,Field Operations Directorate,,London,1652957108.5284467

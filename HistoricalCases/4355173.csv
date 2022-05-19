@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4355173,Lawless Civils Limited,,09/03/2012,"£40,500.00","£53,346.59",Fleet StreetHolbeachEngland,Midlands,South Holland,Construction,42990 - CIVIL ENGINEERING PROJECT NEC.,,CDOP3GRP10,Field Operations Directorate,,East Midlands,2022-05-17 12:52:25.358223+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4355173,Lawless Civils Limited,,09/03/2012,"£40,500.00","£53,346.59",Fleet StreetHolbeachEngland,Midlands,South Holland,Construction,42990 - CIVIL ENGINEERING PROJECT NEC.,,CDOP3GRP10,Field Operations Directorate,,East Midlands,1652957199.0537028

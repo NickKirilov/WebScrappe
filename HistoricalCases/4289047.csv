@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4289047,Chelmer Truck Bodies Limited,,27/01/2012,"£7,500.00","£4,923.40",Boreham Ind Est/Chelmer TruckEngland,East & South East,Chelmsford,Manufacturing,29100 - MANUFACTURE OF MOTOR VEHICLES,Fixed,SOUTHOP2G7,Field Operations Directorate,,East,2022-05-17 12:48:51.951045+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4289047,Chelmer Truck Bodies Limited,,27/01/2012,"£7,500.00","£4,923.40",Boreham Ind Est/Chelmer TruckEngland,East & South East,Chelmsford,Manufacturing,29100 - MANUFACTURE OF MOTOR VEHICLES,Fixed,SOUTHOP2G7,Field Operations Directorate,,East,1652956957.6777284

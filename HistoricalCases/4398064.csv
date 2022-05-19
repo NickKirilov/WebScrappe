@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4398064,Mears Limited,,06/02/2012,"£15,000.00","£3,578.00",21 Coral CloseHolmleighGloucesterGL4 0RGEngland,Wales & South West,Tewkesbury,Construction,43390 - OTHER BUILDING COMPLETION,,CENTOP4G13,Field Operations Directorate,,South West,2022-05-17 12:53:04.010023+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4398064,Mears Limited,,06/02/2012,"£15,000.00","£3,578.00",21 Coral CloseHolmleighGloucesterGL4 0RGEngland,Wales & South West,Tewkesbury,Construction,43390 - OTHER BUILDING COMPLETION,,CENTOP4G13,Field Operations Directorate,,South West,1652957241.2646823

@@ -1,4 +1,4 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
 4684699,Goodwin Steel Castings Ltd,"Prosecution of Goodwin Steel Castings Ltd following an accident investigation.
 A 51-year-old male furnace operative sustained serious burns (33%) to many areas of his body following an ejection of molten slag during a slagging off procedure.
 
@@ -8,4 +8,4 @@ The most likely explanation for the incident is that undetected water had entere
 
 It is likely that rainwater had accumulated underneath a solidified metal ‘skull’ (formed as a result of previous use) & would not be visible to the naked eye
 
-The systems in place for the safe storage & use of slag pans were subequently found to be defficient in a number of respects, most appropriately dealt with by a s2(1) HSWA breach.",21/02/2020,"£133,000.00","£5,226.30",Ivy House Road/Goodwin Steel CIvy House RoadHanleySTOKE ON TRENTStaffordshireST1 3NREngland,Midlands,Stoke-on-Trent,Manufacturing,24520 - CASTING OF STEEL,Fixed,FODOP8GP35,Field Operations Division,,West Midlands,2022-05-17 12:41:34.717663+00:00
+The systems in place for the safe storage & use of slag pans were subequently found to be defficient in a number of respects, most appropriately dealt with by a s2(1) HSWA breach.",21/02/2020,"£133,000.00","£5,226.30",Ivy House Road/Goodwin Steel CIvy House RoadHanleySTOKE ON TRENTStaffordshireST1 3NREngland,Midlands,Stoke-on-Trent,Manufacturing,24520 - CASTING OF STEEL,Fixed,FODOP8GP35,Field Operations Division,,West Midlands,1652956705.5824027

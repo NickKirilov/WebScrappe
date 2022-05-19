@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4385592,NRS Specialist Services (N Wales) Limited,,11/12/2013,"£7,500.00","£5,725.22",Maes Y LlanDwygyfylchiClwydLL31 9LUWales,Wales & South West,Conwy UA,Construction,43910 - ROOFING ACTIVITIES,,CDOP3GRP13,Field Operations Directorate,,Wales,2022-05-17 12:53:53.390841+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4385592,NRS Specialist Services (N Wales) Limited,,11/12/2013,"£7,500.00","£5,725.22",Maes Y LlanDwygyfylchiClwydLL31 9LUWales,Wales & South West,Conwy UA,Construction,43910 - ROOFING ACTIVITIES,,CDOP3GRP13,Field Operations Directorate,,Wales,1652957292.0439045

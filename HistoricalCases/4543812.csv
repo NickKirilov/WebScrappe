@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4543812,PVAD Limited,,27/03/2017,"£51,334.00","£1,523.50",HQ/Overstone Rd/PVAD Limited43 Overstone RoadLONDONW6 0ADEngland,London,Havering,Construction,41100 - DEVELOPMENT BUILDING PROJECTS,Fixed,CDOP4GP22,Construction Division,,London,2022-05-17 12:54:37.927315+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4543812,PVAD Limited,,27/03/2017,"£51,334.00","£1,523.50",HQ/Overstone Rd/PVAD Limited43 Overstone RoadLONDONW6 0ADEngland,London,Havering,Construction,41100 - DEVELOPMENT BUILDING PROJECTS,Fixed,CDOP4GP22,Construction Division,,London,1652957335.3860235

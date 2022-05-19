@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4469423,Danco International PLC,,05/09/2014,"£70,000.00","£6,073.48",Serpentine RoadLondonW2 2UHEngland,London,City of Westminster,Total service industries,96090 - OTHER PERSONAL SERVICE NEC,,CDOP4GRP21,Field Operations Directorate,,London,2022-05-17 12:49:28.687506+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4469423,Danco International PLC,,05/09/2014,"£70,000.00","£6,073.48",Serpentine RoadLondonW2 2UHEngland,London,City of Westminster,Total service industries,96090 - OTHER PERSONAL SERVICE NEC,,CDOP4GRP21,Field Operations Directorate,,London,1652957023.2253683

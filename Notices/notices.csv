@@ -1,21 +1,21 @@
-Notice Number,Recipient's Name,Notice Type,Issue Date,Local Authority,Main Activity,Time-st
-312400837,Glasgow Autos Ltd,Improvement Notice,01/04/2022,Glasgow UA,MVR,2022-05-17 12:05:58.489416+00:00
-312400879,Glasgow Autos Ltd,Improvement Notice,01/04/2022,Glasgow UA,MVR,2022-05-17 12:05:58.489416+00:00
-312401940,Greenhoard Ltd,Improvement Notice,01/04/2022,West Lancashire,MF FABRICATED METAL PROD NEC,2022-05-17 12:05:58.489416+00:00
-312403171,Industrial Steel Suppliers Limited,Improvement Notice,01/04/2022,Flintshire UA,MF METAL (PARTIAL) STRUCTURES,2022-05-17 12:05:58.489416+00:00
-312403219,Industrial Steel Suppliers Limited,Improvement Notice,01/04/2022,Flintshire UA,MF METAL (PARTIAL) STRUCTURES,2022-05-17 12:05:58.489416+00:00
-312403236,Industrial Steel Suppliers Limited,Improvement Notice,01/04/2022,Flintshire UA,MF METAL (PARTIAL) STRUCTURES,2022-05-17 12:05:58.489416+00:00
-312403288,Industrial Steel Suppliers Limited,Improvement Notice,01/04/2022,Flintshire UA,MF METAL (PARTIAL) STRUCTURES,2022-05-17 12:05:58.489416+00:00
-312403315,Industrial Steel Suppliers Limited,Improvement Notice,01/04/2022,Flintshire UA,MF METAL (PARTIAL) STRUCTURES,2022-05-17 12:05:58.489416+00:00
-312405584,Valbone Mulaj,Improvement Notice,01/04/2022,North Hertfordshire,MVR,2022-05-17 12:05:58.489416+00:00
-312405635,Valbone Mulaj,Improvement Notice,01/04/2022,North Hertfordshire,MVR,2022-05-17 12:05:58.489416+00:00
-312405653,Isni Balija,Improvement Notice,01/04/2022,North Hertfordshire,MVR,,,2022-05-17 12:05:59.221503+00:00
-312405685,Isni Balija,Improvement Notice,01/04/2022,North Hertfordshire,MVR,,,2022-05-17 12:05:59.221503+00:00
-312406050,Core Construction of Bath Ltd,Improvement Notice,01/04/2022,Wiltshire UA,CONSTRUCTION OF BUILDINGS,,,2022-05-17 12:05:59.221503+00:00
-312407686,London Underground Limited T/ATransport for London,Improvement Notice,01/04/2022,Ealing,FREIGHT TRANSPORT BY ROAD,,,2022-05-17 12:05:59.221503+00:00
-312407792,London Underground Limited T/ATransport for London,Improvement Notice,01/04/2022,Ealing,FREIGHT TRANSPORT BY ROAD,,,2022-05-17 12:05:59.221503+00:00
-312409318,PLF (UK) Limited,Improvement Notice,01/04/2022,Tendring,Manufacture of other electrical equipment,,,2022-05-17 12:05:59.221503+00:00
-312410602,Stoneworks (UK) Limited,Improvement Notice,01/04/2022,Ealing,CUT/SHAPE/FINISH STONE,,,2022-05-17 12:05:59.221503+00:00
-312410634,Stoneworks (UK) Limited,Improvement Notice,01/04/2022,Ealing,CUT/SHAPE/FINISH STONE,,,2022-05-17 12:05:59.221503+00:00
-312410992,B A Wheels Limited,Improvement Notice,01/04/2022,Norwich,BUSINESS SUPPORT SERVICE NEC,,,2022-05-17 12:05:59.221503+00:00
-312411574,PPD Services Ltd,Prohibition Notice Immediate,01/04/2022,Leeds,CONSTRUCTION COMMERCIAL BLDGS,,,2022-05-17 12:05:59.221503+00:00
+notice_number,recipient's_name,notice_type,issue_date,local_authority,main_activity,cytora_ingest_ts
+312437424,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312438034,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312438060,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312438085,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312438094,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312438144,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312438150,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312438211,Norframe Ltd,Improvement Notice,09/04/2022,Aberdeenshire UA,OTHER MANUFACTURING NEC,1652956673.0726666
+312423141,AEB PRECISION LIMITED,Improvement Notice,08/04/2022,Liverpool,MANUFACTURE OF TOOLS,1652956673.0726666
+312424052,B Allsop Limited,Improvement Notice,08/04/2022,Kirklees,MACHINING,1652956673.0726666
+312424118,B Allsop Limited,Improvement Notice,08/04/2022,Kirklees,MACHINING,,,1652956673.7292888
+312424145,B Allsop Limited,Improvement Notice,08/04/2022,Kirklees,MACHINING,,,1652956673.7292888
+312424189,B Allsop Limited,Improvement Notice,08/04/2022,Kirklees,MACHINING,,,1652956673.7292888
+312424541,LA Lightbars Ltd,Improvement Notice,08/04/2022,Boston,RTL MTR VEHICLE PART/ACCESSORY,,,1652956673.7292888
+312424720,Stable Fabrication Limited,Improvement Notice,08/04/2022,West Northamptonshire,MOTOR VEHICLE PARTS/ACCESSORY,,,1652956673.7292888
+312424753,Stable Fabrication Limited,Improvement Notice,08/04/2022,West Northamptonshire,MOTOR VEHICLE PARTS/ACCESSORY,,,1652956673.7292888
+312425497,Claremont Designs Ltd,Improvement Notice,08/04/2022,Brighton & Hove UA,MF OF KITCHEN FURNITURE,,,1652956673.7292888
+312430481,Constant Group Ltd,Improvement Notice,08/04/2022,Oldham,MF FABRICATED METAL PROD NEC,,,1652956673.7292888
+312430520,Constant Group Ltd,Improvement Notice,08/04/2022,Oldham,MF FABRICATED METAL PROD NEC,,,1652956673.7292888
+312430544,Constant Group Ltd,Improvement Notice,08/04/2022,Oldham,MF FABRICATED METAL PROD NEC,,,1652956673.7292888

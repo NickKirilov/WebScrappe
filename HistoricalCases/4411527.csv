@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4411527,6699 Limited,,05/10/2013,"£255,000.00","£4,798.43",Taniya Dry-Cleaning198 Wandsworth RoadLondonSW8 2JUEngland,London,Lambeth,Construction,41100 - DEVELOPMENT BUILDING PROJECTS,,SOUTHOP1G4,Field Operations Directorate,,London,2022-05-17 12:46:42.968741+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4411527,6699 Limited,,05/10/2013,"£255,000.00","£4,798.43",Taniya Dry-Cleaning198 Wandsworth RoadLondonSW8 2JUEngland,London,Lambeth,Construction,41100 - DEVELOPMENT BUILDING PROJECTS,,SOUTHOP1G4,Field Operations Directorate,,London,1652956831.2091944

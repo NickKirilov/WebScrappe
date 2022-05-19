@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4437227,Jaguar Land Rover Limited,,08/02/2015,"£900,000.00","£49,868.90",Lode LaneSolihullWest MidlandsB92 8NWEngland,Midlands,Solihull,Manufacturing,29100 - MANUFACTURE OF MOTOR VEHICLES,,CENTOP2GP7,Field Operations Directorate,,West Midlands,2022-05-17 12:51:52.141991+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4437227,Jaguar Land Rover Limited,,08/02/2015,"£900,000.00","£49,868.90",Lode LaneSolihullWest MidlandsB92 8NWEngland,Midlands,Solihull,Manufacturing,29100 - MANUFACTURE OF MOTOR VEHICLES,,CENTOP2GP7,Field Operations Directorate,,West Midlands,1652957164.6772604

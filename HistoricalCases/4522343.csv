@@ -1,2 +1,2 @@
-Case Number,Defendant,Description,Offence Date,Total Fine,Total Costs Awarded to HSE,Address,Region,Local Authority,Industry,Main Activity,Type of Location,HSE Group,HSE Directorate,HSE Area,HSE Division,Time-st
-4522343,Brewsters (Poole) Ltd,,28/09/2016,"£2,700.00","£1,000.00",Poole/Brewsters (Poole) Ltd1 Playfields DrivePOOLEDorsetBH12 2EG,,,Construction,43290 - CONSTRUCTION INSTALLATION NEC,Fixed,CDOP3GP11,Construction Division,,,2022-05-17 12:48:13.538334+00:00
+case_number,defendant,description,offence_date,total_fine,total_costs_awarded_to_hse,address,region,local_authority,industry,main_activity,type_of_location,hse_group,hse_directorate,hse_area,hse_division,cytora_ingest_ts
+4522343,Brewsters (Poole) Ltd,,28/09/2016,"£2,700.00","£1,000.00",Poole/Brewsters (Poole) Ltd1 Playfields DrivePOOLEDorsetBH12 2EG,,,Construction,43290 - CONSTRUCTION INSTALLATION NEC,Fixed,CDOP3GP11,Construction Division,,,1652956917.2665071
