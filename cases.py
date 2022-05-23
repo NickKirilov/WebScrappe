@@ -1,6 +1,6 @@
 import os
-import time
 import urllib.error
+from os.path import exists
 
 import pandas
 import requests
@@ -18,7 +18,7 @@ def scrape_cases():
     data = pandas.DataFrame(res,
                             columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                      'main_activity'])
-    data['cytora_ingest_ts'] = time.time()
+    data['cytora_ingest_ts'] = pandas.to_datetime('today')
 
     try:
         os.makedirs('Cases')
@@ -43,7 +43,7 @@ def scrape_cases():
             data = pandas.DataFrame(res,
                                     columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                              'main_activity'])
-            data['cytora_ingest_ts'] = time.time()
+            data['cytora_ingest_ts'] = pandas.to_datetime('today')
             data.to_csv(f'Cases/cases.csv', index=False, mode='a', header=False)
 
             i += 1
@@ -100,11 +100,11 @@ def fetch_cases_details(case_id: str) -> dict:
     try:
         response = requests.get(
             'https://resources.hse.gov.uk/convictions/case/case_details.asp?SF=CN&SV=' + case_id)
-
         soup = BeautifulSoup(response.text, 'lxml')
         res = parse_cases_details_table(soup)
         res.insert(0, case_id)
 
+        file_path = f'Cases/cases_details.csv'
         new_df = pandas.DataFrame(
             [res],
             columns=[
@@ -113,11 +113,12 @@ def fetch_cases_details(case_id: str) -> dict:
                 'main_activity', 'type_of_location', 'hse_group', 'hse_directorate', 'hse_area', 'hse_division'
             ]
         )
+        new_df['cytora_ingest_ts'] = pandas.to_datetime('today')
 
-        new_df['cytora_ingest_ts'] = time.time()
-
-        file_path = f'Cases/{case_id}.csv'
-        new_df.to_csv(file_path, index=False)
+        if not exists(file_path):
+            new_df.to_csv(file_path, index=False)
+        else:
+            new_df.to_csv(file_path, index=False, mode='a', header=False)
 
         return {
             'state': True,

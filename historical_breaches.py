@@ -1,6 +1,6 @@
 import os
-import time
 import urllib.error
+from os.path import exists
 
 import pandas
 import requests
@@ -19,7 +19,7 @@ def scrape_historical_breaches():
         data = pandas.DataFrame(res, columns=['case/breach', 'defendant\'s_name', 'hearing_date', 'result',
                                           'fine £', 'act_or_regulation'])
 
-        data['cytora_ingest_ts'] = time.time()
+        data['cytora_ingest_ts'] = pandas.to_datetime('today')
 
         try:
             os.makedirs('HistoricalBreaches')
@@ -44,7 +44,8 @@ def scrape_historical_breaches():
                 data = pandas.DataFrame(res,
                                         columns=['case/breach', 'defendant\'s_name', 'hearing_date', 'result',
                                                  'fine £', 'act_or_regulation'])
-                data['cytora_ingest_ts'] = time.time()
+                data['cytora_ingest_ts'] = pandas.to_datetime('today')
+
                 data.to_csv('HistoricalBreaches/historical_breaches.csv', index=False, mode='a', header=False)
 
                 i += 1
@@ -121,10 +122,14 @@ def fetch_historical_breaches_details(case_id: str, breach_number: str, endpoint
             ]
         )
 
-        new_df['cytora_ingest_ts'] = time.time()
+        new_df['cytora_ingest_ts'] = pandas.to_datetime('today')
 
-        file_path = f'HistoricalBreaches/{endpoint}.csv'
-        new_df.to_csv(file_path, index=False)
+        file_path = f'HistoricalBreaches/historical_breaches_details.csv'
+
+        if not exists(file_path):
+            new_df.to_csv(file_path, index=False)
+        else:
+            new_df.to_csv(file_path, index=False, mode='a', header=False)
 
         return {
             'state': True,

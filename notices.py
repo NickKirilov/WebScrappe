@@ -1,6 +1,6 @@
 import os
-import time
 import urllib.error
+from os.path import exists
 
 import pandas
 import requests
@@ -11,7 +11,7 @@ from common_utils import BASE_URLS, parse_notices_details_table
 def scrape_notices():
     df = pandas.read_html(BASE_URLS['Notices'].format("1"), header=0)
     df[0].drop(df[0].tail(1).index, inplace=True)
-    df[0]['cytora_ingest_ts'] = time.time()
+    df[0]['cytora_ingest_ts'] = pandas.to_datetime('today')
 
     data = df[0][
         ['Notice Number', 'Recipient\'s Name', 'Notice Type', 'Issue Date', 'Local Authority', 'Main Activity',
@@ -19,7 +19,6 @@ def scrape_notices():
 
     data.columns = ['_'.join(col.lower().split(' ')) for col in data.columns]
 
-    # change it to with statement
     try:
         os.makedirs('Notices')
     except FileExistsError:
@@ -42,10 +41,15 @@ def scrape_notices():
     for i in range(2, 3):
         try:
             df = pandas.read_html(BASE_URLS['Notices'].format(i), header=0)
-            df[0]['cytora_ingest_ts'] = time.time()
             df[0].drop(df[0].tail(1).index, inplace=True)
+            df[0]['cytora_ingest_ts'] = pandas.to_datetime('today')
 
-            df[0].to_csv(f'Notices/notices.csv', index=False, mode='a', header=False)
+            data = df[0][
+                ['Notice Number', 'Recipient\'s Name', 'Notice Type', 'Issue Date', 'Local Authority', 'Main Activity',
+                 'cytora_ingest_ts']]
+
+            data.columns = ['_'.join(col.lower().split(' ')) for col in data.columns]
+            data.to_csv(f'Notices/notices.csv', index=False, mode='a', header=False)
         except urllib.error.HTTPError:
             print('Bad request')
             print(f'At index: {i}')
@@ -100,6 +104,7 @@ def scrape_notices_details(notices: list = None):
 
 
 def fetch_notices_details(notice_id: str, recipient_name: str, served_date: str) -> dict:
+
     try:
         response = requests.get(
             'https://resources.hse.gov.uk/notices/notices/notice_details.asp?SF=CN&SV=' + notice_id)
@@ -112,17 +117,22 @@ def fetch_notices_details(notice_id: str, recipient_name: str, served_date: str)
         res.insert(0, recipient_name)
         res.insert(0, notice_id)
 
+        if len(columns) < 12:
+            file_path = 'Notices/notices_not_all_details.csv'
+        else:
+            file_path = f'Notices/notices_details.csv'
+
         new_df = pandas.DataFrame(
             [res],
-            columns=[
-                        'notice_number', 'recipient_name', 'served_date',
-                    ] + columns
+            columns=['notice_number', 'recipient_name', 'served_date'] + columns
         )
 
-        new_df['cytora_ingest_ts'] = time.time()
+        new_df['cytora_ingest_ts'] = pandas.to_datetime('today')
 
-        file_path = f'Notices/{notice_id}.csv'
-        new_df.to_csv(file_path, index=False)
+        if not exists(file_path):
+            new_df.to_csv(file_path, index=False)
+        else:
+            new_df.to_csv(file_path, index=False, mode='a', header=False)
 
         return {
             'state': True,

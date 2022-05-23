@@ -1,6 +1,6 @@
 import os
-import time
 import urllib.error
+from os.path import exists
 
 import pandas
 import requests
@@ -19,7 +19,7 @@ def scrape_historical_cases():
     data = pandas.DataFrame(res, columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                           'main_activity'])
 
-    data['cytora_ingest_ts'] = time.time()
+    data['cytora_ingest_ts'] = pandas.to_datetime('today')
 
     try:
         os.makedirs('HistoricalCases')
@@ -44,7 +44,7 @@ def scrape_historical_cases():
             data = pandas.DataFrame(res,
                                     columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                              'main_activity'])
-            data['cytora_ingest_ts'] = time.time()
+            data['cytora_ingest_ts'] = pandas.to_datetime('today')
             data.head(10).to_csv('HistoricalCases/historical_cases.csv', index=False, mode='a', header=False)
 
             i += 1
@@ -92,6 +92,8 @@ def scrape_historical_cases_details(cases: list = None):
                     success.add(a.get('case_id'))
                     success_arr.append(a)
 
+                break
+
     print('Errors: ' + str(errors))
     print('Successful: ' + str(success))
     print(len(success_arr))
@@ -105,6 +107,7 @@ def fetch_historical_cases_details(case_id: str) -> dict:
         soup = BeautifulSoup(response.text, 'lxml')
         res = parse_cases_details_table(soup)
         res.insert(0, case_id)
+        file_path = f'HistoricalCases/historical_cases_details.csv'
 
         new_df = pandas.DataFrame(
             [res],
@@ -115,10 +118,12 @@ def fetch_historical_cases_details(case_id: str) -> dict:
             ]
         )
 
-        new_df['cytora_ingest_ts'] = time.time()
+        new_df['cytora_ingest_ts'] = pandas.to_datetime('today')
 
-        file_path = f'HistoricalCases/{case_id}.csv'
-        new_df.to_csv(file_path, index=False)
+        if not exists(file_path):
+            new_df.to_csv(file_path, index=False)
+        else:
+            new_df.to_csv(file_path, index=False, mode='a', header=False)
 
         return {
             'state': True,
