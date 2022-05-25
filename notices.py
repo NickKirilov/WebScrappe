@@ -12,10 +12,11 @@ def scrape_notices():
     df = pandas.read_html(BASE_URLS['Notices'].format("1"), header=0)
     df[0].drop(df[0].tail(1).index, inplace=True)
     df[0]['cytora_ingest_ts'] = pandas.to_datetime('today')
+    df[0]['page_id'] = '1'
 
     data = df[0][
         ['Notice Number', 'Recipient\'s Name', 'Notice Type', 'Issue Date', 'Local Authority', 'Main Activity',
-         'cytora_ingest_ts']]
+         'cytora_ingest_ts', 'page_id']]
 
     data.columns = ['_'.join(col.lower().split(' ')) for col in data.columns]
 
@@ -43,10 +44,11 @@ def scrape_notices():
             df = pandas.read_html(BASE_URLS['Notices'].format(i), header=0)
             df[0].drop(df[0].tail(1).index, inplace=True)
             df[0]['cytora_ingest_ts'] = pandas.to_datetime('today')
+            df[0]['page_id'] = str(i)
 
             data = df[0][
                 ['Notice Number', 'Recipient\'s Name', 'Notice Type', 'Issue Date', 'Local Authority', 'Main Activity',
-                 'cytora_ingest_ts']]
+                 'cytora_ingest_ts', 'page_id']]
 
             data.columns = ['_'.join(col.lower().split(' ')) for col in data.columns]
             data.to_csv(f'Notices/notices.csv', index=False, mode='a', header=False)
@@ -63,6 +65,8 @@ def scrape_notices_details(notices: list = None):
     success = set()
     success_arr = []
 
+    cytora_file_ingest_st = pandas.to_datetime('today').format()
+
     if notices:
         for i in range(0, len(notices)):
 
@@ -70,7 +74,7 @@ def scrape_notices_details(notices: list = None):
             served_date = notices[i].get('served_date')
             recipient_name = notices[i].get('recipient_name')
 
-            a = fetch_notices_details(notice_number, recipient_name, served_date)
+            a = fetch_notices_details(notice_number, recipient_name, served_date, cytora_file_ingest_st)
 
             if not a.get('state'):
                 errors.add(a.get('notice_id'))
@@ -89,7 +93,7 @@ def scrape_notices_details(notices: list = None):
                 served_date = record[3]
                 recipient_name = record[1]
 
-                a = fetch_notices_details(notice_number, recipient_name, served_date)
+                a = fetch_notices_details(notice_number, recipient_name, served_date, cytora_file_ingest_st)
 
                 if not a.get('state'):
                     errors.add(a.get('notice_id'))
@@ -103,7 +107,7 @@ def scrape_notices_details(notices: list = None):
     print(len(success_arr))
 
 
-def fetch_notices_details(notice_id: str, recipient_name: str, served_date: str) -> dict:
+def fetch_notices_details(notice_id: str, recipient_name: str, served_date: str, cytora_ingest_ts) -> dict:
 
     try:
         response = requests.get(
@@ -118,9 +122,9 @@ def fetch_notices_details(notice_id: str, recipient_name: str, served_date: str)
         res.insert(0, notice_id)
 
         if len(columns) < 12:
-            file_path = 'Notices/notices_not_all_details.csv'
+            file_path = f'Notices/notices_not_all_details_{cytora_ingest_ts}.csv'
         else:
-            file_path = f'Notices/notices_details.csv'
+            file_path = f'Notices/notices_details_{cytora_ingest_ts}.csv'
 
         new_df = pandas.DataFrame(
             [res],

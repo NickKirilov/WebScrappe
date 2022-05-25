@@ -79,10 +79,15 @@ def parse_cases_details_table(soup):
             if 'Breach involved in this Case' in table[i].text or 'HSE Details' in table[i].text or 'Location of Offence' in table[i].text:
                 continue
 
-            if i > 24:
+            if 'This case did result' in table[5].text:
+                if i % 2 != 0 and i <= 26:
+                    res.append(table[i].text)
+                else:
+                    if i % 2 == 0 and i > 26:
+                        res.append(table[i].text)
+            elif i > 24:
                 if i % 2 == 0:
                     res.append(table[i].text)
-
             else:
                 if i % 2 != 0:
                     res.append(table[i].text)
@@ -108,7 +113,9 @@ def parse_breaches_details_table(soup):
             if i in fields_to_not_enter:
                 continue
 
-            if i % 2 != 0:
+            if i % 2 != 0 and i < 36:
+                res.append(table[i].text)
+            elif i % 2 == 0 and i > 36:
                 res.append(table[i].text)
 
         except IndexError:

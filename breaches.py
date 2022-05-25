@@ -20,6 +20,7 @@ def scrape_breaches():
                             columns=['case/breach', 'defendant\'s_name', 'hearing_date', 'result',
                                      'fine £', 'act_or_regulation'])
     data['cytora_ingest_ts'] = pandas.to_datetime('today')
+    data['page_id'] = '1'
 
     try:
         os.makedirs('Breaches')
@@ -44,6 +45,7 @@ def scrape_breaches():
                                     columns=['case/breach', 'defendant\'s_name', 'hearing_date', 'result',
                                              'fine £', 'act_or_regulation'])
             data['cytora_ingest_ts'] = pandas.to_datetime('today')
+            data['page_id'] = str(i)
             data.to_csv('Breaches/breaches.csv', index=False, mode='a', header=False)
 
             i += 1
@@ -60,13 +62,15 @@ def scrape_breaches_details(breaches: list = None):
     success = set()
     success_arr = []
 
+    cytora_file_ingest_st = pandas.to_datetime('today')
+
     if breaches:
         for i in range(0, len(breaches)):
             case_number = breaches[i].get('case_id')
             breach_number = breaches[i].get('breach_number')
             endpoint = breaches[i].get('endpoint')
 
-            a = fetch_breaches_details(case_number, breach_number, endpoint)
+            a = fetch_breaches_details(case_number, breach_number, endpoint, cytora_file_ingest_st)
 
             if not a.get('state'):
                 errors.add(a.get('case_id'))
@@ -87,7 +91,7 @@ def scrape_breaches_details(breaches: list = None):
                 endpoint = case_number + breach_number
                 case_number = case_number[:-1]
 
-                a = fetch_breaches_details(case_number, breach_number, endpoint)
+                a = fetch_breaches_details(case_number, breach_number, endpoint, cytora_file_ingest_st)
 
                 if not a.get('state'):
                     errors.add(a.get('case_id'))
@@ -101,7 +105,7 @@ def scrape_breaches_details(breaches: list = None):
     print(len(success_arr))
 
 
-def fetch_breaches_details(case_id: str, breach_number: str, endpoint: str) -> dict:
+def fetch_breaches_details(case_id: str, breach_number: str, endpoint: str, cytora_ingest_st) -> dict:
     try:
         response = requests.get(
             'https://resources.hse.gov.uk/convictions/breach/breach_details.asp?SF=BID&SV=' + endpoint)
@@ -124,7 +128,7 @@ def fetch_breaches_details(case_id: str, breach_number: str, endpoint: str) -> d
 
         new_df['cytora_ingest_ts'] = pandas.to_datetime('today')
 
-        file_path = f'Breaches/breaches_details.csv'
+        file_path = f'Breaches/breaches_details_{cytora_ingest_st}.csv'
 
         if not exists(file_path):
             new_df.to_csv(file_path, index=False)

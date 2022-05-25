@@ -19,6 +19,7 @@ def scrape_cases():
                             columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                      'main_activity'])
     data['cytora_ingest_ts'] = pandas.to_datetime('today')
+    data['page_id'] = '1'
 
     try:
         os.makedirs('Cases')
@@ -44,6 +45,8 @@ def scrape_cases():
                                     columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                              'main_activity'])
             data['cytora_ingest_ts'] = pandas.to_datetime('today')
+            data['page_id'] = str(i)
+
             data.to_csv(f'Cases/cases.csv', index=False, mode='a', header=False)
 
             i += 1
@@ -59,12 +62,13 @@ def scrape_cases_details(cases: list = None):
     errors_arr = []
     success = set()
     success_arr = []
+    cytora_file_ingest_st = pandas.to_datetime('today')
 
     if cases:
         for i in range(0, len(cases)):
             case_number = cases[i].get('case_id')
 
-            a = fetch_cases_details(case_number)
+            a = fetch_cases_details(case_number, cytora_file_ingest_st)
 
             if not a.get('state'):
                 errors.add(a.get('case_id'))
@@ -82,7 +86,7 @@ def scrape_cases_details(cases: list = None):
                     continue
                 case_number = record[0]
 
-                a = fetch_cases_details(case_number)
+                a = fetch_cases_details(case_number, cytora_file_ingest_st)
 
                 if not a.get('state'):
                     errors.add(a.get('case_id'))
@@ -96,19 +100,21 @@ def scrape_cases_details(cases: list = None):
     print(len(success_arr))
 
 
-def fetch_cases_details(case_id: str) -> dict:
+def fetch_cases_details(case_id: str, cytora_ingest_st) -> dict:
     try:
         response = requests.get(
             'https://resources.hse.gov.uk/convictions/case/case_details.asp?SF=CN&SV=' + case_id)
         soup = BeautifulSoup(response.text, 'lxml')
         res = parse_cases_details_table(soup)
         res.insert(0, case_id)
+        if not 'This case did result' in res[3]:
+            res.insert(3, '')
 
-        file_path = f'Cases/cases_details.csv'
+        file_path = f'Cases/cases_details_{cytora_ingest_st}.csv'
         new_df = pandas.DataFrame(
             [res],
             columns=[
-                'case_number', 'defendant', 'description', 'offence_date',
+                'case_number', 'defendant', 'description', 'additional_info', 'offence_date',
                 'total_fine', 'total_costs_awarded_to_hse', 'address', 'region', 'local_authority', 'industry',
                 'main_activity', 'type_of_location', 'hse_group', 'hse_directorate', 'hse_area', 'hse_division'
             ]
@@ -126,6 +132,7 @@ def fetch_cases_details(case_id: str) -> dict:
             'case_id': case_id,
         }
     except ValueError as e:
+        print(str(e))
         return {
             'state': False,
             'error': str(e),

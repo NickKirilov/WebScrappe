@@ -20,6 +20,7 @@ def scrape_historical_cases():
                                           'main_activity'])
 
     data['cytora_ingest_ts'] = pandas.to_datetime('today')
+    data['page_id'] = '1'
 
     try:
         os.makedirs('HistoricalCases')
@@ -45,6 +46,7 @@ def scrape_historical_cases():
                                     columns=['case_number', 'defendant\'s_name', 'offence_date', 'local_authority',
                                              'main_activity'])
             data['cytora_ingest_ts'] = pandas.to_datetime('today')
+            data['page_id'] = str(i)
             data.head(10).to_csv('HistoricalCases/historical_cases.csv', index=False, mode='a', header=False)
 
             i += 1
@@ -61,11 +63,13 @@ def scrape_historical_cases_details(cases: list = None):
     success = set()
     success_arr = []
 
+    cytora_file_ingest_st = pandas.to_datetime('today')
+
     if cases:
         for i in range(0, len(cases)):
             case_number = cases[i].get('case_id')
 
-            a = fetch_historical_cases_details(case_number)
+            a = fetch_historical_cases_details(case_number, cytora_file_ingest_st)
 
             if not a.get('state'):
                 errors.add(a.get('case_id'))
@@ -83,7 +87,7 @@ def scrape_historical_cases_details(cases: list = None):
                     continue
                 case_number = record[0]
 
-                a = fetch_historical_cases_details(case_number)
+                a = fetch_historical_cases_details(case_number, cytora_file_ingest_st)
 
                 if not a.get('state'):
                     errors.add(a.get('case_id'))
@@ -99,7 +103,7 @@ def scrape_historical_cases_details(cases: list = None):
     print(len(success_arr))
 
 
-def fetch_historical_cases_details(case_id: str) -> dict:
+def fetch_historical_cases_details(case_id: str, cytora_ingest_st) -> dict:
     try:
         response = requests.get(
             'https://resources.hse.gov.uk/convictions-history/case/case_details.asp?SF=CN&SV=' + case_id)
@@ -107,7 +111,7 @@ def fetch_historical_cases_details(case_id: str) -> dict:
         soup = BeautifulSoup(response.text, 'lxml')
         res = parse_cases_details_table(soup)
         res.insert(0, case_id)
-        file_path = f'HistoricalCases/historical_cases_details.csv'
+        file_path = f'HistoricalCases/historical_cases_details_{cytora_ingest_st}.csv'
 
         new_df = pandas.DataFrame(
             [res],
